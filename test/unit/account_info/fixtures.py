@@ -84,8 +84,8 @@ def sqlite_account_info(sqlite_account_info_factory):
 
 @pytest.fixture(
     params=[
-        pytest.lazy_fixture('in_memory_account_info_factory'),
-        pytest.lazy_fixture('sqlite_account_info_factory'),
+        pytest.lazy_fixtures('in_memory_account_info_factory'),
+        pytest.lazy_fixtures('sqlite_account_info_factory'),
     ]
 )
 def account_info_factory(request):
@@ -94,8 +94,8 @@ def account_info_factory(request):
 
 @pytest.fixture(
     params=[
-        pytest.lazy_fixture('in_memory_account_info'),
-        pytest.lazy_fixture('sqlite_account_info'),
+        pytest.lazy_fixtures('in_memory_account_info'),
+        pytest.lazy_fixtures('sqlite_account_info'),
     ]
 )
 def account_info(request):
